@@ -1,9 +1,6 @@
 package com.shrek.puzzles;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class Executive implements Runnable{
+public class Executive implements Runnable {
 
 	static int executionTime = 0;
 	static int totalShipmentsCompleted = 0;
