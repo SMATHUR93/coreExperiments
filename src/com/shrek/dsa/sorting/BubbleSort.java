@@ -5,14 +5,6 @@ public class BubbleSort {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		// Concepts by Puneet
-		//in practical : O(n^x) if(x>=2) is not scab
-		//1 : stability check ? order of record is maintained or not if key is same  
-		//2 : adaptibilty ? reaction on presorted records  
-		//3 : inversions ? no of swaps
-		//4 : comparison 
-		//5 : space		
-		
 		Employee e1=new Employee(1,"SHREY1","MATHUR1");
 		Employee e2=new Employee(2,"SHREY2","MATHUR2");
 		Employee e3=new Employee(3,"SHREY3","MATHUR3");

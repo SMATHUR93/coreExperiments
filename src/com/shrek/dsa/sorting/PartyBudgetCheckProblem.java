@@ -3,7 +3,7 @@ package com.shrek.dsa.sorting;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Main2 {
+public class PartyBudgetCheckProblem {
 
 	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub

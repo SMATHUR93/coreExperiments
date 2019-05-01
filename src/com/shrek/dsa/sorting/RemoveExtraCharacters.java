@@ -3,7 +3,7 @@ package com.shrek.dsa.sorting;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Main1 {
+public class RemoveExtraCharacters {
 
 	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
@@ -19,8 +19,7 @@ public class Main1 {
 					if(inp[i]==inp[j]){
 						j++;
 						k++;
-					}
-					else{
+					} else{
 						break;
 					}
 				}
