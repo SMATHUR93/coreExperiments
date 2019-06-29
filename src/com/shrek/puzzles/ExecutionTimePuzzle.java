@@ -1,7 +1,6 @@
 package com.shrek.puzzles;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 class Processor  implements Comparable<Processor>{

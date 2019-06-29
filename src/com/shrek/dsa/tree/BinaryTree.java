@@ -19,7 +19,9 @@ public class BinaryTree {
 		// TODO Auto-generated method stub
 		BinaryTree tree = new BinaryTree();
 		
+		BinaryTreeNode n8 = new BinaryTreeNode(8, null, null);
 		BinaryTreeNode n7 = new BinaryTreeNode(7, null, null);
+		n7.setRight(n8);
 		BinaryTreeNode n6 = new BinaryTreeNode(6, null, null);
 		BinaryTreeNode n5 = new BinaryTreeNode(5, null, null);
 		BinaryTreeNode n4 = new BinaryTreeNode(4, null, null);

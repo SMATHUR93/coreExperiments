@@ -9,13 +9,13 @@ public class PermutationsOfItemsTakenAtATime {
 	
 	static void getPermutations(String input, String output, int permutationSize) {
 		if(input.length()==0) {
-			System.out.println("--IPC--"+input + " - " + output);
+			//System.out.println("--IPC--"+input + " - " + output);
 			outputList.add(output);
 			output= "";
 			return;
 		}
 		if(output.length()>=permutationSize) {
-			System.out.println("--PSC--"+input + " - " + output);
+			//System.out.println("--PSC--"+input + " - " + output);
 			outputList.add(output);
 			output= "";
 			return;

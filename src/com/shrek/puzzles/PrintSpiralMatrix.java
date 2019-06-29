@@ -137,7 +137,9 @@ public class PrintSpiralMatrix {
 			6,5,4
 		}};
 		
-		int mat[][] = mat4;
+		int[][] mat5 = {{1,2,3}};
+		
+		int mat[][] = mat3;
 		
 		int rows = mat.length;
 		int columns = mat[0].length;
