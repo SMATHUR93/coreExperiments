@@ -53,8 +53,14 @@ public class FindLeastCommonSubstring {
 			System.out.println("No common substring");
 			return null;
 		}
-		for(int i = 0; i < m ; i++) {
-			for(int j = 0 ; j < n ; j++) {
+//		System.out.print("  ");
+//		for(int j = 0 ; j < n ; j++) {
+//			System.out.print(str2.charAt(j) + " ");
+//		}
+//		System.out.println();
+		for(int i = 0; i < m+1 ; i++) {
+			//System.out.print(str1.charAt(i) + " ");
+			for(int j = 0 ; j < n+1 ; j++) {
 				System.out.print(LCSMatrix[i][j] + " ");
 			}
 			System.out.println();
