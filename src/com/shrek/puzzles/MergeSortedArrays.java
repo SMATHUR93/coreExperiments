@@ -1,53 +1,41 @@
 package com.shrek.puzzles;
 
+import java.util.Arrays;
+
 public class MergeSortedArrays {
 
 	public static void main(String[] args) {
-		MergeSortedArrays.mergeArr();
+		int[] arr1 = {0, 1, 3, 4, 7, 9};
+		int[] arr2 = {2, 6, 8, 10};
+		System.out.println(Arrays.toString(mergeArr( arr1, arr2)));
 	}
 	
-	static void mergeArr(){
-		int[] arr1 = {1,2,5,20};
-		int[] arr2 = {2,5,7,10,14,16};
-		int lenSum = arr1.length + arr2.length;
-		//System.out.println(lenSum + " " + arr1Len + " " + arr2Len  );
-		int[] output = new int[lenSum];
-		int[] large, small;
-		int arr2Len = arr2.length;
-		int arr1Len = arr1.length;
-		if(arr1[0]>arr2[0]) {
-			large = arr1;
-			small  =arr2;
-		} else{
-			large = arr2;
-			small = arr1;
-		}
-		int j=0,k=0;
-		for(int i = 0;i < lenSum;i++) {
-			if( j>small.length-1 ) {
-				output[i] = large[k];
-				k++;
-			}else {
-				if( k>large.length-1 ) {
-					output[i] = small[j];
-					j++;
+	static int[] mergeArr(int[] arr1, int[] arr2) {
+		int m = arr1.length;
+		int n = arr2.length;
+		int[] out = new int[n+m];
+		int startm = 0;
+		int startn = 0;
+		for(int i=0;i<(n+m);i++) {
+			if((startm==m || startn==n)) {
+				if(startm==m) {
+					out[i] = arr2[startn];
+					startn++;
 				} else {
-					// System.out.println(j+"   "+k+ "   " +i+ "   " );
-					if(large[k]>small[j]) {
-						output[i] = small[j];
-						j++;
-					} else {
-						output[i] = large[k];
-						k++;
-					}
+					out[i] = arr1[startm];
+					startm++;
+				}
+			} else{
+				if(arr1[startm]<arr2[startn]) {
+					out[i] = arr1[startm];
+					startm++;
+				} else {
+					out[i] = arr2[startn];
+					startn++;
 				}
 			}
 		}
-		
-		for(int i = 0;i < lenSum;i++) {
-			System.out.println(output[i]);
-		}
-		
+		return out;
 	}
-
+	
 }

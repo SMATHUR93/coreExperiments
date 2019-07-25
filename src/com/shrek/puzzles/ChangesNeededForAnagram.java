@@ -7,7 +7,7 @@ public class ChangesNeededForAnagram {
 
 	public static void main(String[] args) {
 		String str1 = "shrey";
-		String str2 = "shrek";
+		String str2 = "syreh";
 		int charsToModify = -1;
 		if(str1.length() == str2.length()) {
 			charsToModify = 0;

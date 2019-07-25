@@ -1,20 +1,20 @@
-package com.shrek.miscellaneous;
+package com.shrek.string;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PermutationsOfItemsTakenAtATime {
+public class CombinationsFromAString {
 
 	static List<String> outputList = new ArrayList<String>();
 	
-	static void getPermutations(String input, String output, int permutationSize) {
-		if(input.length()==0) {
+	static void getCombinations(String input, String output, int permutationSize) {
+		if(input.length()==0 && output.length()>=permutationSize) {
 			//System.out.println("--IPC--"+input + " - " + output);
 			outputList.add(output);
 			output= "";
 			return;
 		}
-		if(output.length()>=permutationSize) {
+		if(output.length()==permutationSize) {
 			//System.out.println("--PSC--"+input + " - " + output);
 			outputList.add(output);
 			output= "";
@@ -22,16 +22,17 @@ public class PermutationsOfItemsTakenAtATime {
 		}
 		for(int i=0;i<input.length();i++) {
 			char ch = input.charAt(i);
-			String leftStr = input.substring(0, i);
+			//String leftStr = input.substring(0, i);
 			String rightStr = input.substring(i+1);
-			getPermutations(leftStr + rightStr, output + ch, permutationSize);
+			//System.out.println(rightStr + " + " + (output + ch) );
+			getCombinations( rightStr, output + ch, permutationSize);
 		}
 	}
 	
 	public static void main(String[] args) {
-		String input = "abc";
+		String input = "abcde";
 		//List<String> outputList = new ArrayList<String>();
-		getPermutations(input, "", 2);
+		getCombinations(input, "", 3);
 		System.out.println(outputList);
 	}
 	

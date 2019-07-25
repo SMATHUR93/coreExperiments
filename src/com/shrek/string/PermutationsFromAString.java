@@ -1,4 +1,4 @@
-package com.shrek.miscellaneous;
+package com.shrek.string;
 
 import java.util.List;
 import java.util.ArrayList;
