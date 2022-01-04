@@ -15,6 +15,10 @@ class A2{
 }
 
 class B2 extends A2{
+
+	B2(String msg){
+
+	}
 	void meth1(){}
 	void meth2(){}
 }
