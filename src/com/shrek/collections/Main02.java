@@ -9,9 +9,9 @@ public class Main02 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Employee1 e1=new Employee1("Shrek",45566,"Master of Evil");
-		Employee1 e2=new Employee1("Shredder",2326,"King of Ninjas");
-		Employee1 e3=new Employee1("Shrek_d_Beast",125200,"King in the North");
+		Employee1 e1=new Employee1("D",45566,"Master of Evil");
+		Employee1 e2=new Employee1("S",2326,"King of Ninjas");
+		Employee1 e3=new Employee1("A",125200,"King in the North");
 		
 		Set<Employee1> empSet=new TreeSet<Employee1>();
 		empSet.add(e1);

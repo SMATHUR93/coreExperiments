@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class RainWaterProblem {
 
 	public static void main(String[] args) {
-		int arr[] = {6,4,2,0,2,4,6};
+		int arr[] = {1,3,1,2,3,1};
 		System.out.println("Maximum rain water accumulated is " + calculateRainWater(arr));
 	}
 	
@@ -26,7 +26,7 @@ public class RainWaterProblem {
 		System.out.println("right ==== "+Arrays.toString(rightMax));
 		int water = 0;
 		for (int i = 0; i < length; i++) {
-			water += Math.min(leftMax[i],rightMax[i]) - input[i]; 
+			water += Math.min( leftMax[i], rightMax[i] ) - input[i];
 		}
 		return water;
 	}

@@ -40,8 +40,8 @@ public class Main03 {
 		empList.add(e1);
 		empList.add(e2);
 		empList.add(e3);
-		Collections.sort(empList);
-		//Collections.sort(empList, new AgeComparator());
+		// Collections.sort(empList);
+		Collections.sort(empList, new AgeComparator());
 		//Collections.sort(empList, new NameComparator());
 		//Collections.sort(empList, new GradeComparator());
 		Iterator<Employee2> itr=empList.iterator();
