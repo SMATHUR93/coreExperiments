@@ -3,6 +3,7 @@ package com.shrek.leetCode.arraysStrings;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -115,35 +116,43 @@ public class _024H_TextJustification {
         System.out.println("-------------- BREAK -----------------");
     }
 
+    // Solution: is to first add elemetns in line format and just checking if adding new element crosses maxWIdth
+    // once els are added in one line, we apply text justifaction logic utilizing MODULO function on the string.
     public static List<String> fullJustify(String[] words, int maxWidth) {
-        List<String> list = new ArrayList<String>();
+        List<String> res = new ArrayList<>();
+        List<String> cur = new ArrayList<>();
+        int num_of_letters = 0;
 
-        if(words.length==1){
-            list.add(words[0]);
-            return list;
+        int key;
+        String value;
+        for (String word : words) {
+            if (word.length() + cur.size() + num_of_letters > maxWidth) {
+                for (int i = 0; i < maxWidth - num_of_letters; i++) {
+                    key = i % (cur.size() - 1 > 0 ? cur.size() - 1 : 1);
+                    value = cur.get(i % (cur.size() - 1 > 0 ? cur.size() - 1 : 1)) + "X";
+                    System.out.println("Debugging in loop, key = " + key + " , value = "+ value);
+                    cur.set(key, value);
+                }
+                System.out.println("Debugging on loop completion cur = " + cur);
+                StringBuilder sb = new StringBuilder();
+                for (String s : cur) sb.append(s);
+                res.add(sb.toString());
+                cur.clear();
+                num_of_letters = 0;
+            }
+            cur.add(word);
+            num_of_letters += word.length();
         }
 
-        int noOfWords = words.length;
-
-        // Greedy Addition with padding or justification
-        String listEl = new String(words[0] + " ");
-        for(int i=1;i<noOfWords;i++){
-            System.out.println("Debugging in loop, i = "+i+" , words[i] = "+words[i]+" , liEl = " + listEl );
-            if( maxWidth < (listEl.length() + words[i].length() + 1)){
-                list.add(listEl);
-                listEl = new String();
-                System.out.println("Inside new element condition");
-            }
-            listEl = listEl.concat(words[i]);
-            if(i!=noOfWords-1){
-                listEl = listEl.concat(" ");
-            }
+        StringBuilder lastLine = new StringBuilder();
+        for (int i = 0; i < cur.size(); i++) {
+            lastLine.append(cur.get(i));
+            if (i != cur.size() - 1) lastLine.append(" ");
         }
-        list.add(listEl);
+        while (lastLine.length() < maxWidth) lastLine.append(" ");
+        res.add(lastLine.toString());
 
-        System.out.println("Debugging li = " + list );
-
-        return list;
+        return res;
     }
 
 }
