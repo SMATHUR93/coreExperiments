@@ -106,35 +106,37 @@ public class _073M_ConstructBinaryTreeFromInorderAndPostorder {
         }
     }
 
-    /*public static int preorderIndex;
+    public static int postorderIndex = 0;
     public static Map<Integer, Integer> inorderIndexMap;
-
-    public static TreeNode buildTree(int[] inorder, int[] postorder) {
-        preorderIndex = 0;
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
+        postorderIndex = postorder.length-1;
         inorderIndexMap = new HashMap<>();
-        for (int i = 0; i < inorder.length; i++) {
+        for(int i=0;i<inorder.length;i++){
             inorderIndexMap.put(inorder[i], i);
         }
-        return arrayToTree(preorder, 0, preorder.length - 1);
+        return arrayToTree(inorder, postorder, 0, postorder.length - 1);
     }
-
-    public static TreeNode arrayToTree(int[] preorder, int left, int right) {
-        if (left > right) {
+    public static TreeNode arrayToTree(int[] inorder, int[] postorder,int left, int right){
+        if(left > right){
             return null;
         }
-        int rootValue = preorder[preorderIndex++];
-        TreeNode root = new TreeNode(rootValue);
-        root.left = arrayToTree(
-                preorder,
-                left,
-                inorderIndexMap.get(rootValue) - 1
-        );
+        int rootVal = postorder[postorderIndex];
+        TreeNode root = new TreeNode(rootVal);
+        postorderIndex--;
+        int index = inorderIndexMap.get(rootVal);
         root.right = arrayToTree(
-                preorder,
-                inorderIndexMap.get(rootValue) + 1,
+                inorder,
+                postorder,
+                index + 1,
                 right
         );
+        root.left = arrayToTree(
+                inorder,
+                postorder,
+                left,
+                index -1
+        );
         return root;
-    }*/
+    }
 
 }
