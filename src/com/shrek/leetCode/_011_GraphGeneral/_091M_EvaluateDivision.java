@@ -135,7 +135,7 @@ public class _091M_EvaluateDivision {
             graph.get(divisor).put(divident, 1 / quotient);
         }
         double[] result =  new double[queries.size()];
-        for(int i=0;i< queries.size();i++){
+        for(int i=0;i<queries.size();i++){
             List<String> query = queries.get(i);
             divident = query.get(0);
             divisor = query.get(1);
