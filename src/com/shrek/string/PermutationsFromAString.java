@@ -10,9 +10,8 @@ public class PermutationsFromAString {
 	static void getPermutations(String input, String output) {
 		// System.out.println("--getPermutations recurssions --" + " ,input = " + input  + " ,output = " +output);
 		if(input.length()==0) {
-			System.out.println("--IPC--"+input + " - " + output);
+			// System.out.println("--IPC--"+input + " - " + output);
 			outputList.add(output);
-			output= "";
 			return;
 		}
 		for(int i=0;i<input.length();i++) {
@@ -26,14 +25,14 @@ public class PermutationsFromAString {
 	
 	public static void main(String[] args) {
 		String input = "abc";
-		//List<String> outputList = new ArrayList<String>();
-		//getPermutations(input, "");
-		//System.out.println(outputList);
+		// List<String> outputList = new ArrayList<String>();
+		getPermutations(input, "");
+		System.out.println(outputList);
 
-		char[] arr = input.toCharArray();
+		/*char[] arr = input.toCharArray();
 		System.out.println(arr);
 		System.out.println("=============");
-		getPermutations2(arr, 0, arr.length-1);
+		getPermutations2(arr, 0, arr.length-1);*/
 	}
 
 	static void getPermutations2(char[] arr, int start, int end){

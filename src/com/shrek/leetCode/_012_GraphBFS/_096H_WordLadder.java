@@ -120,9 +120,6 @@ public class _096H_WordLadder {
                     }
                 }
             }
-            /*if(queue.size()!=0){
-                ladderLength++;
-            }*/
             ladderLength++;
             // System.out.println("Debugging, ladderLength = "+ladderLength+" , queue length = "+queue.size());
         }

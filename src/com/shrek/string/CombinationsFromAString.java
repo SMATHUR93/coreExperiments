@@ -8,16 +8,9 @@ public class CombinationsFromAString {
 	static List<String> outputList = new ArrayList<String>();
 	
 	static void getCombinations(String input, String output, int permutationSize) {
-		if(input.length()==0 && output.length()>=permutationSize) {
-			//System.out.println("--IPC--"+input + " - " + output);
-			outputList.add(output);
-			output= "";
-			return;
-		}
 		if(output.length()==permutationSize) {
 			//System.out.println("--PSC--"+input + " - " + output);
 			outputList.add(output);
-			output= "";
 			return;
 		}
 		for(int i=0;i<input.length();i++) {
@@ -32,7 +25,7 @@ public class CombinationsFromAString {
 	public static void main(String[] args) {
 		String input = "abcde";
 		//List<String> outputList = new ArrayList<String>();
-		getCombinations(input, "", 3);
+		getCombinations(input, "", 2);
 		System.out.println(outputList);
 	}
 	
