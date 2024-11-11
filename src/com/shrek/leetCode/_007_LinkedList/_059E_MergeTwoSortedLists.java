@@ -98,8 +98,35 @@ public class _059E_MergeTwoSortedLists {
         ListNode(int val) { this.val = val; }
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
+
+    public static ListNode mergeTwoLists(ListNode left, ListNode right){
+        ListNode dummyHead =  new ListNode();
+        ListNode curr = dummyHead;
+        while(left!=null && right!=null){
+            if(left.val < right.val){
+                curr.next=left;
+                left=left.next;
+                curr = curr.next;
+            } else{
+                curr.next=right;
+                right=right.next;
+                curr = curr.next;
+            }
+        }
+        curr.next = (left != null) ? left : right;
+
+        System.out.println("Debugging: Start");
+        ListNode node = dummyHead.next;
+        while(node!=null){
+            System.out.println("node val = "+node.val);
+            node = node.next;
+        }
+        System.out.println("Debugging: End");
+
+        return dummyHead.next;
+    }
     
-    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+    /*public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode dummyHead = new ListNode();
         ListNode prev = dummyHead;
         ListNode newNode;
@@ -132,6 +159,6 @@ public class _059E_MergeTwoSortedLists {
         System.out.println("Debugging: End");
 
         return dummyHead.next;
-    }
+    }*/
     
 }
