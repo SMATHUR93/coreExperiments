@@ -69,10 +69,10 @@ public class _113E_SearchInsertPosition {
     }
 
     public static int searchInsert(int[] nums, int target) {
-        /*int pivot, left = 0, right = nums.length - 1;
+        int pivot, left = 0, right = nums.length - 1;
         while (left <= right) {
             pivot = left + (right - left) / 2;
-            if (nums[pivt] == target) {
+            if (nums[pivot] == target) {
                 return pivot;
             }
             if (target < nums[pivot]) {
@@ -81,8 +81,8 @@ public class _113E_SearchInsertPosition {
                 left = pivot + 1;
             }
         }
-        return left;*/
-        return 0;
+        return left;
+        // return 0;
     }
 
 }
