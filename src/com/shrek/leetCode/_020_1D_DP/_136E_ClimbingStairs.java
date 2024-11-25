@@ -1,5 +1,7 @@
 package com.shrek.leetCode._020_1D_DP;
 
+import java.util.Arrays;
+
 /**
  *
  * You are climbing a staircase. It takes n steps to reach the top.
@@ -31,8 +33,68 @@ package com.shrek.leetCode._020_1D_DP;
 
 public class _136E_ClimbingStairs {
 
-    public int climbStairs(int n) {
-        return 0;
+    public static void main(String[] args) {
+        int n;
+
+        n = 2;
+        System.out.println("climbStairs for n = "+n+" , equals "+climbStairs(n));
+        // 2
+        System.out.println();
+
+        n = 3;
+        System.out.println("climbStairs for n = "+n+" , equals "+climbStairs(n));
+        // 3
+        System.out.println();
+
     }
+
+    // memoization using 1-D table
+    public static int climbStairs(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        int[] memo = new int[n+1];
+        memo[1] = 1;
+        memo[2] = 2;
+        for(int i=3;i<=n;i++){
+            memo[i] = memo[i-1] + memo[i-2];
+        }
+        return memo[n];
+    }
+
+    // memoization using recursion
+    /*public static int climbStairs(int n) {
+        int[] memo = new int[n+1];
+        return climbStairsRec(0, n, memo);
+    }
+
+    public static int climbStairsRec(int start, int total, int[] memo){
+        if(start>total){
+            return 0;
+        }
+        if(start==total){
+            return 1;
+        }
+        if (memo[start] > 0) {
+            return memo[start];
+        }
+        memo[start] = climbStairsRec(start+1, total, memo)+climbStairsRec(start+2, total, memo);
+        return memo[start];
+    }*/
+
+    // Naive approach
+    /*public static int climbStairs(int n) {
+        return climbStairsRec(0, n);
+    }
+
+    public static int climbStairsRec(int start, int total){
+        if(start>total){
+            return 0;
+        }
+        if(start==total){
+            return 1;
+        }
+        return climbStairsRec(start+1, total)+climbStairsRec(start+2, total);
+    }*/
 
 }
