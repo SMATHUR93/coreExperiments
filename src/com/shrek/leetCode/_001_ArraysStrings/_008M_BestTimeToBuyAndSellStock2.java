@@ -116,23 +116,91 @@ public class _008M_BestTimeToBuyAndSellStock2 {
         }*/
     }
 
-
+    // Ideal solution using tabular Dynamic Programming
     public static int maxProfit(int[] prices) {
-        // online solution using greedy approach,
-        // The clue was to en-cash everyday when stock price rises up
+        int n = prices.length;
+        int[][] dp = new int[n+1][2];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<2;j++){
+                dp[i][j] = -1;
+            }
+        }
+
+        dp[n][0] = 0;
+        dp[n][1] = 0;
+
+        for(int i=n-1;i>=0;i--){
+            for(int buy=0;buy<=1;buy++){
+                int profit = 0;
+                if(buy==1){
+                    profit = Math.max(
+                            -prices[i] + dp[i+1][0],
+                            0 + dp[i+1][1]
+                    );
+                } else{
+                    profit = Math.max(
+                            prices[i] + dp[i+1][1],
+                            0 + dp[i+1][0]
+                    );
+                }
+                dp[i][buy]=profit;
+            }
+        }
+
+        return dp[0][1];
+    }
+
+    // This problem falls under DP so this is recursive memoization solution
+    /*public static int maxProfit(int[] prices) {
+        int[][] dp = new int[prices.length][2];
+        for(int i=0;i<prices.length;i++){
+            for(int j=0;j<2;j++){
+                dp[i][j] = -1;
+            }
+        }
+        return rec(prices, 0, 1, dp);
+    }
+
+    static int rec(int[] prices, int idx, int buy, int[][] dp){
+        if(idx==prices.length){
+            return 0;
+        }
+        if(dp[idx][buy]!=-1){
+            return dp[idx][buy];
+        }
+        int profit = 0;
+        if(buy==1){
+            profit = Math.max(
+                    -prices[idx] + rec(prices, idx+1, 0, dp),
+                    0 + rec(prices, idx+1, 1, dp)
+            );
+        } else{
+            profit = Math.max(
+                    prices[idx] + rec(prices, idx+1, 1, dp),
+                    0 + rec(prices, idx+1, 0, dp)
+            );
+        }
+        return dp[idx][buy]=profit;
+    }*/
+
+    // online solution using greedy approach,
+    // The clue was to en-cash everyday when stock price rises up
+    /*public static int maxProfit(int[] prices) {
         int max = 0;
         int start = prices[0];
         int len = prices.length;
-        for(int i = 1;i<len; i++){
-            if(start < prices[i]){
+        for (int i = 1; i < len; i++) {
+            if (start < prices[i]) {
                 max += prices[i] - start;
             }
             start = prices[i];
         }
         return max;
+    }*/
 
-        // My own solution
-        /*int n = prices.length;
+    // My own solution
+    /*public static int maxProfit(int[] prices) {
+        int n = prices.length;
         if(n<1){
             return 0;
         }
@@ -166,6 +234,6 @@ public class _008M_BestTimeToBuyAndSellStock2 {
                 buyPtr = i;
             }
         }
-        return maxProfit;*/
-    }
+        return maxProfit;
+    }*/
 }
