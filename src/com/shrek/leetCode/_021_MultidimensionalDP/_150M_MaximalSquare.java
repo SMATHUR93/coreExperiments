@@ -71,6 +71,7 @@ public class _150M_MaximalSquare {
 
     }
 
+    // trick is to move each cell and find minimal value on dp grid
     public static int maximalSquare(char[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;
