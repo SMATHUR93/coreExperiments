@@ -97,6 +97,10 @@ public class _015H_Candy {
             temp[i] = Math.max(leftHigh[i], rightHigh[i]);
         }
 
+        // System.out.println(Arrays.toString(leftHigh));
+
+        // System.out.println(Arrays.toString(rightHigh));
+
         System.out.println(Arrays.toString(temp));
 
         for(int i=0;i<n;i++){

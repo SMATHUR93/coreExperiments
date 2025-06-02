@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.PriorityQueue;
 
 /**
  *
@@ -52,7 +53,20 @@ public class _121M_KthLargestElementInAnArray {
 
     }
 
+    // Using Heaps
     public static int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> heap = new PriorityQueue<>();
+        for (int i = 0; i < nums.length; i++) {
+            heap.add(nums[i]);
+            if (heap.size() > k) {
+                heap.remove();
+            }
+        }
+        return heap.peek();
+    }
+
+    // Using quick select extremely initutive approach
+    /*public static int findKthLargest(int[] nums, int k) {
         List<Integer> list = new ArrayList<>();
         for (int num: nums) {
             list.add(num);
@@ -83,7 +97,7 @@ public class _121M_KthLargestElementInAnArray {
             return quickSelect(right, k - left.size() - mid.size());
         }
         return pivot;
-    }
+    }*/
 
     // Naive way of sorting the array o(nlogn) is time complexity
     /*public static int findKthLargest(int[] nums, int k) {

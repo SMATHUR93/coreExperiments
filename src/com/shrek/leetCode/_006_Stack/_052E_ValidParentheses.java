@@ -88,7 +88,6 @@ public class _052E_ValidParentheses {
             return false;
         }
         Stack<Character> stack  = new Stack<Character>();
-
         for(int i=0;i<arr.length;i++){
             char ch = arr[i];
             //'(', ')', '{', '}', '[' and ']',

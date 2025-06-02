@@ -148,7 +148,11 @@ public class _024H_TextJustification {
             lastLine.append(cur.get(i));
             if (i != cur.size() - 1) lastLine.append(" ");
         }
-        while (lastLine.length() < maxWidth) lastLine.append(" ");
+
+        while (lastLine.length() < maxWidth) {
+            lastLine.append(" ");
+        }
+
         res.add(lastLine.toString());
 
         return res;

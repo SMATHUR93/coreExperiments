@@ -1,7 +1,9 @@
 package com.shrek.leetCode._001_ArraysStrings;
 
 /**
- * Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
+ * Given an integer array nums and an integer val, remove all occurrences of val in nums in-place.
+ * The order of the elements may be changed.
+ * Then return the number of elements in nums which are not equal to val.
  *
  * Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
  *
@@ -49,7 +51,8 @@ package com.shrek.leetCode._001_ArraysStrings;
  * 0 <= val <= 100
  *
  * Hint 1
- * The problem statement clearly asks us to modify the array in-place and it also says that the element beyond the new length of the array can be anything. Given an element, we need to remove all the occurrences of it from the array. We don't technically need to remove that element per-say, right?
+ * The problem statement clearly asks us to modify the array in-place and it also says that the element beyond the new length of the array can be anything.
+ * Given an element, we need to remove all the occurrences of it from the array. We don't technically need to remove that element per-say, right?
  * Hint 2
  * We can move all the occurrences of this element to the end of the array. Use two pointers!
  *

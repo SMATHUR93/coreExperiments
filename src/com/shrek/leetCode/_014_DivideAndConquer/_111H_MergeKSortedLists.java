@@ -39,7 +39,7 @@ import java.util.Arrays;
  *
  */
 
-public class _111H_MergeKSortedLists {
+public class  _111H_MergeKSortedLists {
 
     public static void main(String[] args) {
         ListNode[] lists;

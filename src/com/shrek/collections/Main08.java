@@ -1,13 +1,8 @@
 package com.shrek.collections;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
-class Person{
+class Person implements Comparable<Person>{
 	String firstName;
 	String lastName;
 	Person(String firstName,String lastName){
@@ -16,6 +11,10 @@ class Person{
 	}
 	public int hashCode(){
 		return 420;
+	}
+
+	public int compareTo(Person o) {
+		return this.lastName.compareTo(o.lastName);
 	}
 }
 
@@ -66,6 +65,17 @@ public class Main08 {
 		//System.out.println(heroMap);
 		Hero heroName=heroMap.get(person1);
 		System.out.println(heroName.name);
+
+		System.out.println("----------------------------------------");
+
+		Map<Person, Hero> sortedHeroMap = new TreeMap<>();
+		sortedHeroMap.put(person1,new Hero("BATMAN",2,100,89,67));
+		sortedHeroMap.put(person2,new Hero("SUPERMAN",100,1,45,56));
+		personSet=sortedHeroMap.keySet();
+		for(Object personObj:personSet){
+			Person person=(Person)personObj;
+			System.out.println(person.firstName+" "+person.lastName);
+		}
 	}
 
 }

@@ -31,19 +31,16 @@ public class _020E_LongestCommonPrefix {
 
     public static void main(String[] args) {
         String[] s = {"flower","flow","flight"};
-        System.out.println(s);
+        System.out.println(Arrays.toString(s));
         System.out.println("longestCommonPrefix for "+ Arrays.toString(s)+" = "+longestCommonPrefix(s));
         System.out.println("-------------- BREAK -----------------");
         s = new String[]{"dog","racecar","car"};
-        System.out.println(s);
         System.out.println("longestCommonPrefix for "+ Arrays.toString(s) +" = "+longestCommonPrefix(s));
         System.out.println("-------------- BREAK -----------------");
         s = new String[]{"a"};
-        System.out.println(s);
         System.out.println("longestCommonPrefix for "+ Arrays.toString(s) +" = "+longestCommonPrefix(s));
         System.out.println("-------------- BREAK -----------------");
         s = new String[]{"ab", "a"};
-        System.out.println(s);
         System.out.println("longestCommonPrefix for "+ Arrays.toString(s) +" = "+longestCommonPrefix(s));
         System.out.println("-------------- BREAK -----------------");
     }

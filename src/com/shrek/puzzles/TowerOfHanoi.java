@@ -3,7 +3,7 @@ package com.shrek.puzzles;
 public class TowerOfHanoi {
 
     public static void main(String[] args) {
-        towerOfHanoi(3, 'A', 'C', 'B');
+        towerOfHanoi(4, 'A', 'C', 'B');
     }
 
     static int towerOfHanoiStepsCount = 0;
